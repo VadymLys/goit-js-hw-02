@@ -1,19 +1,9 @@
 function checkForSpam(message) {
-  let result;
-
-    if (message.includes("spam")
-        || message.includes("sale")
-        || message.includes("SPAM")
-        || message.includes("SaLe")
-        || message.includes("sPam")
-        || message.includes("SalE")) {
-    result = true;
-  } else {
-    result = false;
-  }
+  const normalizedMessage = message.toLowerCase();
+  return normalizedMessage.includes("spam") || normalizedMessage.includes("sale"); 
 
 
-  return result;
+ 
 }
 
 console.log(checkForSpam("Latest technology news")); // false
